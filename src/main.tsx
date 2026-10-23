@@ -8,10 +8,12 @@ import './index.css'
 
 registerSW({ immediate: true })
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <StoreProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <App />
       </BrowserRouter>
     </StoreProvider>
